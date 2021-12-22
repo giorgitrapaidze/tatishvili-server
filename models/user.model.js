@@ -7,6 +7,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   role: { type: String, enum: ["admin", "user"], default: "user" },
   image: { type: String, default: "https://i.imgur.com/yWHfhiG.png" },
+  bookings: [{ type: Schema.Types.ObjectId, ref: "Booking" }],
 });
 
 module.exports = model("User", userSchema);
